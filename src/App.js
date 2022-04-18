@@ -60,7 +60,7 @@ function App(props) {
   
   <button onClick={()=>{
     setGameSate(initialState);
-  }}>Clear Game</button>
+  }}>Clear Game12</button>
      
    </div>
   );
