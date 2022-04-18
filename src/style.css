@@ -1,0 +1,52 @@
+
+
+*{
+	padding: 0,;
+	margin: 0;
+}
+
+body{
+	background: #192A53;
+	height: 100vh;
+	width: 100vw;
+}
+
+.row{
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	justify-items: center;
+	justify-content: center;
+	align-content: center;
+}
+
+h1{
+	color: whitesmoke;
+}
+
+span{
+	text-align: center;
+	font-size: 54px;
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+}
+
+.square{
+	color: white;
+	height: 100px;
+	width: 100px;
+	border: 1px solid white;
+}
+
+.container{
+	display: flex;
+	align-items: center;
+	justify-items: center;
+
+	height: 100vh;
+	width: 100vw;
+	flex-direction: column;
+	justify-content: center;
+}
