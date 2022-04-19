@@ -5,7 +5,7 @@ import {useState, useEffect} from "react";
 function App(props) {
 
   const initialState=["","","","","","","","",""];
-  
+
   const [gameState, setGameSate]=useState(initialState);
   const [isXturn, setTurn]=useState(false);
   const winningPos=[[0,1,2], [0,3,6],[6,7,8],[2,5,8],[0,4,8],[2,4,6],[3,4,5],[1,4,7]];
@@ -14,8 +14,7 @@ function App(props) {
         console.log(gameState)
         for(var i=0;i<winningPos.length;i++){
           const arr=winningPos[i];
-          console.log(arr)
-          if(gameState[arr[0]]!="" && gameState[arr[1]]!="" && gameState[arr[0]]==gameState[arr[1]] && gameState[arr[1]]==gameState[arr[2]]){
+          if(gameState[arr[0]]!=="" && gameState[arr[1]]!=="" && gameState[arr[0]]===gameState[arr[1]] && gameState[arr[1]]===gameState[arr[2]]){
             var playerWon=isXturn? "X":"0";
             alert(playerWon+" has won");
           }
