@@ -8,23 +8,32 @@ function App(props) {
 
   const [gameState, setGameSate]=useState(initialState);
   const [isXturn, setTurn]=useState(false);
+  const [isFinished,setIsFinished]=useState(false);
 
 
-  useEffect(()=>{
-      const winningPos=[[0,1,2], [0,3,6],[6,7,8],[2,5,8],[0,4,8],[2,4,6],[3,4,5],[1,4,7]];
-
+  function returnWinnerUser(){
+     const winningPos=[[0,1,2], [0,3,6],[6,7,8],[2,5,8],[0,4,8],[2,4,6],[3,4,5],[1,4,7]];
         for(var i=0;i<winningPos.length;i++){
           const arr=winningPos[i];
           if(gameState[arr[0]]!=="" && gameState[arr[1]]!=="" && gameState[arr[0]]===gameState[arr[1]] && gameState[arr[1]]===gameState[arr[2]]){
             var playerWon=isXturn? "X":"0";
-            alert(playerWon+" has won");
+            return playerWon;
           }
     }
-  },[gameState, isXturn]);
+    return null;
+  }
+
+  useEffect(()=>{
+      const playerWon=returnWinnerUser();
+      if(playerWon){
+          alert(playerWon+" has won");
+          setIsFinished(true);
+      }
+  },[gameState]);
 
   function updatePlayerState(index){
       let strings=Array.from(gameState);
-      if(gameState[index]===""){
+      if(gameState[index]==="" && !isFinished){
          strings[index]=isXturn ? "0": "X";
         setGameSate(strings);
         setTurn(!isXturn);
@@ -59,6 +68,7 @@ function App(props) {
   
   <button onClick={()=>{
     setGameSate(initialState);
+    setIsFinished(false);
   }}>Clear Game12</button>
      
    </div>
