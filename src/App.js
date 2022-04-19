@@ -19,7 +19,7 @@ function App(props) {
             alert(playerWon+" has won");
           }
     }
-  },[gameState, isXturn]);
+  },[gameState, isXturn, winningPos]);
 
   function updatePlayerState(index){
       let strings=Array.from(gameState);
