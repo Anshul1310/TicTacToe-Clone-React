@@ -23,13 +23,13 @@ function App(props) {
     return null;
   }
 
-  useEffect(()=>{
-      const playerWon=returnWinnerUser();
+  function calConclusion(){
+    const playerWon=returnWinnerUser();
       if(playerWon){
           alert(playerWon+" has won");
           setIsFinished(true);
       }
-  },[gameState]);
+  }
 
   function updatePlayerState(index){
       let strings=Array.from(gameState);
@@ -37,6 +37,8 @@ function App(props) {
          strings[index]=isXturn ? "0": "X";
         setGameSate(strings);
         setTurn(!isXturn);
+        calConclusion();
+        console.log(gameState);
       }
      
   }
