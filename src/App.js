@@ -1,6 +1,6 @@
 import React from "react";
 import BoxElement from "./BoxElement";
-import {useState, useEffect} from "react";
+import {useState} from "react";
 
 function App(props) {
 
