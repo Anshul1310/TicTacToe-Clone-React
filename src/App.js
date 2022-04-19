@@ -5,6 +5,7 @@ import {useState, useEffect} from "react";
 function App(props) {
 
   const initialState=["","","","","","","","",""];
+  
   const [gameState, setGameSate]=useState(initialState);
   const [isXturn, setTurn]=useState(false);
   const winningPos=[[0,1,2], [0,3,6],[6,7,8],[2,5,8],[0,4,8],[2,4,6],[3,4,5],[1,4,7]];
@@ -36,8 +37,6 @@ function App(props) {
    <div className="container">
 
    <h1>React Tic Tac Toe App</h1>
-
-
    <div>
     <div className="row">
       <BoxElement state={gameState[0]} onClick={()=> updatePlayerState(0)}   />

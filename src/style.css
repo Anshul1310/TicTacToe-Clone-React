@@ -11,6 +11,10 @@ body{
 	width: 100vw;
 }
 
+.main{
+	
+}
+
 .row{
 	display: flex;
 	justify-items: center;
