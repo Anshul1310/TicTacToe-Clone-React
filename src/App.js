@@ -23,7 +23,7 @@ function App(props) {
 
   function updatePlayerState(index){
       let strings=Array.from(gameState);
-      if(gameState[index]==""){
+      if(gameState[index]===""){
          strings[index]=isXturn ? "0": "X";
         setGameSate(strings);
         setTurn(!isXturn);
